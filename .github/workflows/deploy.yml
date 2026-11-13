@@ -1,0 +1,71 @@
+
+name: CI/CD - Deploy Website
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  validate:
+    name: CI - Check HTML
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Get source code
+        uses: actions/checkout@v6
+
+      - name: Check HTML file
+        run: |
+          test -f index.html
+          python3 - <<'PY'
+          from html.parser import HTMLParser
+
+          class Checker(HTMLParser):
+              pass
+
+          with open("index.html", encoding="utf-8") as file:
+              html = file.read()
+
+          Checker().feed(html)
+
+          if "<!DOCTYPE html>" not in html.upper():
+              raise SystemExit("DOCTYPE is missing")
+
+          print("HTML file exists and can be parsed!")
+          PY
+
+  deploy:
+    name: CD - Deploy Website
+    needs: validate
+    runs-on: ubuntu-latest
+
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    steps:
+      - name: Get source code
+        uses: actions/checkout@v6
+
+      - name: Configure GitHub Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload website
+        uses: actions/upload-pages-artifact@v4
+        with:
+          path: .
+
+      - name: Deploy website
+        id: deployment
+        uses: actions/deploy-pages@v4
