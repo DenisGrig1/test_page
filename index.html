@@ -1,0 +1,49 @@
+
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Приветствие</title>
+
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        input, button {
+            padding: 10px;
+            margin: 5px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1 id="greeting"></h1>
+
+    <h2>Введите свое имя</h2>
+
+    <input type="text" id="username" placeholder="Ваше имя">
+
+    <button onclick="sayHello()">Отправить</button>
+
+    <script>
+        function sayHello() {
+            let name = document.getElementById("username").value;
+
+            if (name.trim() !== "") {
+                document.getElementById("greeting").textContent =
+                    "Привет, " + name + "!";
+            }
+        }
+    </script>
+
+</body>
+</html>
+
