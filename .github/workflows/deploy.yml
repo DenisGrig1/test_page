@@ -39,7 +39,7 @@ jobs:
 
           Checker().feed(html)
 
-          if "<!DOCTYPE html>" not in html.upper():
+          if "<!DOCTYPE HTML>" not in html.upper():
               raise SystemExit("DOCTYPE is missing")
 
           print("HTML file exists and can be parsed!")
