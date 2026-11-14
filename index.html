@@ -1,10 +1,9 @@
-
-
 <!DOCTYPE html>
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <title>Приветствие</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Моя страница</title>
 
     <style>
         body {
@@ -15,35 +14,93 @@
             height: 100vh;
             margin: 0;
             font-family: Arial, sans-serif;
+            background-color: #f0f2f5;
+        }
+
+        #date {
+            font-size: 22px;
+            color: #555;
+            margin-bottom: 5px;
+        }
+
+        #time {
+            font-size: 40px;
+            font-weight: bold;
+            margin-bottom: 25px;
+            color: #333;
+        }
+
+        h1 {
+            color: #333;
         }
 
         input, button {
             padding: 10px;
             margin: 5px;
+            font-size: 16px;
+        }
+
+        button {
+            cursor: pointer;
         }
     </style>
 </head>
+
 <body>
+
+    <div id="date"></div>
+    <div id="time"></div>
 
     <h1 id="greeting"></h1>
 
     <h2>Введите свое имя</h2>
 
-    <input type="text" id="username" placeholder="Ваше имя">
+    <input
+        type="text"
+        id="username"
+        placeholder="Ваше имя"
+    >
 
     <button onclick="sayHello()">Отправить</button>
 
     <script>
-        function sayHello() {
-            let name = document.getElementById("username").value;
 
-            if (name.trim() !== "") {
-                document.getElementById("greeting").textContent =
-                    "Привет, " + name + "!";
+        // Функция обновления даты и времени
+        function updateDateTime() {
+            const now = new Date();
+
+            const date = now.toLocaleDateString('ru-RU', {
+                weekday: 'long',
+                year: 'numeric',
+                month: 'long',
+                day: 'numeric'
+            });
+
+            const time = now.toLocaleTimeString('ru-RU', {
+                hour: '2-digit',
+                minute: '2-digit',
+                second: '2-digit'
+            });
+
+            document.getElementById('date').textContent = date;
+            document.getElementById('time').textContent = time;
+        }
+
+        updateDateTime();
+        setInterval(updateDateTime, 1000);
+
+
+        // Функция приветствия
+        function sayHello() {
+            const name = document.getElementById('username').value;
+
+            if (name.trim() !== '') {
+                document.getElementById('greeting').textContent =
+                    'Привет, ' + name + '!';
             }
         }
+
     </script>
 
 </body>
 </html>
-
