@@ -35,7 +35,7 @@ const products = [
     category: "sofas",
     categoryName: "Диваны",
     description: "Прямой минималистичный диван",
-    price: 89900,
+    price: 29999,
     image: "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?auto=format&fit=crop&w=900&q=80",
     alt: "Современный диван в спокойном интерьере"
   },
@@ -45,7 +45,7 @@ const products = [
     category: "sofas",
     categoryName: "Диваны",
     description: "Мягкий и удобный",
-    price: 112000,
+    price: 34999,
     image: "https://images.unsplash.com/photo-1550254478-ead40cc54513?auto=format&fit=crop&w=900&q=80",
     alt: "Светлый мягкий диван"
   },
@@ -55,7 +55,7 @@ const products = [
     category: "chairs",
     categoryName: "Стулья и кресла",
     description: "Дизайнерское кресло для отдыха",
-    price: 42900,
+    price: 6999,
     image: "https://images.unsplash.com/photo-1567538096630-e0c55bd6374c?auto=format&fit=crop&w=900&q=80",
     alt: "Дизайнерское кресло"
   },
@@ -65,7 +65,7 @@ const products = [
     category: "chairs",
     categoryName: "Стулья и кресла",
     description: "Деревянный стул с мягким сиденьем",
-    price: 15900,
+    price: 2999,
     image: "https://i.pinimg.com/474x/62/36/07/6236075446bdbb3fc1965d1c386c4b1d.jpg?nii=t",
     alt: "Стул в современной обеденной зоне"
   },
@@ -75,7 +75,7 @@ const products = [
     category: "tables",
     categoryName: "Столы",
     description: "Небольшой прикроватный столик",
-    price: 54900,
+    price: 3999,
     image: "https://images.unsplash.com/photo-1499933374294-4584851497cc?auto=format&fit=crop&w=900&q=80",
     alt: "Деревянный стол"
   },
@@ -85,7 +85,7 @@ const products = [
     category: "tables",
     categoryName: "Столы",
     description: "Рабочий стол для домашнего кабинета",
-    price: 37900,
+    price: 10999,
     image: "https://images.unsplash.com/photo-1518455027359-f3f8164ba6bd?auto=format&fit=crop&w=900&q=80",
     alt: "Рабочий стол в минималистичном интерьере"
   },
@@ -95,7 +95,7 @@ const products = [
     category: "storage",
     categoryName: "Хранение",
     description: "Компактный комод для одежды",
-    price: 46900,
+    price: 24999,
     image: "https://i.pinimg.com/originals/56/1d/42/561d42660daf39dec35730756e4581fd.jpg?nii=t",
     alt: "Мебель для хранения в интерьере"
   },
@@ -105,7 +105,7 @@ const products = [
     category: "storage",
     categoryName: "Хранение",
     description: "Минималистичная прикроватная тумба",
-    price: 18900,
+    price: 3999,
     image: "https://elizaspb.ru/jpg/414aea5ac4630315b209251ad9ba558f.jpg",
     alt: "Лаконичная деревянная мебель"
   }
