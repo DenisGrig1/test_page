@@ -1,229 +1,117 @@
-
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Моя страница</title>
-
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-            margin-top: 50px;
-        }
-
-        input {
-            padding: 5px;
-            font-size: 16px;
-        }
-
-        button {
-            padding: 5px 10px;
-            font-size: 16px;
-            cursor: pointer;
-        }
-
-        #greeting {
-            margin-top: 20px;
-            font-size: 20px;
-        }
-
-        #date {
-            font-size: 18px;
-        }
-
-        #time {
-            font-size: 24px;
-            margin-top: 5px;
-            margin-bottom: 25px;
-        }
-
-        /* Календарь */
-        .calendar {
-            width: 300px;
-            margin: 30px auto;
-        }
-
-        .calendar-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 10px;
-        }
-
-        .calendar-header h2 {
-            font-size: 20px;
-            margin: 0;
-        }
-
-        .calendar-grid {
-            display: grid;
-            grid-template-columns: repeat(7, 1fr);
-            gap: 5px;
-        }
-
-        .calendar-day,
-        .calendar-weekday {
-            padding: 8px 0;
-        }
-
-        .calendar-weekday {
-            font-weight: bold;
-        }
-
-        .today {
-            background-color: #ddd;
-            font-weight: bold;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="FORMA — современная мебель с лаконичным дизайном для повседневной жизни.">
+  <title>FORMA — мебель для жизни</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/script.js" defer></script>
 </head>
 <body>
-
-    <!-- Дата и время -->
-    <div id="date"></div>
-    <div id="time"></div>
-
-    <!-- Приветствие -->
-    <h1>Введите фамилию</h1>
-
-    <input
-        type="text"
-        id="nameInput"
-        placeholder="Ваше имя"
-    >
-
-    <button onclick="sayHello()">
-        Ввести
-    </button>
-    <div id="greeting"></div>
-
-    <!-- Календарь -->
-    <div class="calendar">
-        <div class="calendar-header">
-            <button onclick="changeMonth(-1)">❮</button>
-            <h2 id="monthYear"></h2>
-            <button onclick="changeMonth(1)">❯</button>
-        </div>
-        <div class="calendar-grid" id="calendar"></div>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="index.html" aria-label="FORMA — главная">FORMA<span>.</span></a>
+      <button class="menu-toggle" type="button" aria-label="Открыть меню" aria-expanded="false">
+        <span></span><span></span>
+      </button>
+      <nav class="main-nav" aria-label="Главная навигация">
+        <a href="index.html" aria-current="page">Главная</a>
+        <a href="catalog.html">Каталог</a>
+        <a href="reviews.html">Отзывы</a>
+        <a href="contacts.html">Контакты</a>
+      </nav>
+      <a class="header-link" href="contacts.html">Связаться <span aria-hidden="true">↗</span></a>
     </div>
-    <script>
+  </header>
 
-        // Приветствие пользователя
-        function sayHello() {
-            const name = document.getElementById("nameInput").value;
+  <main>
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <p class="eyebrow">МЕБЕЛЬ ДЛЯ СОВРЕМЕННОЙ ЖИЗНИ</p>
+          <h1>Простота формы.<br><span>Комфорт каждый день.</span></h1>
+          <p class="lead">Создаём пространство, в котором хочется жить. Функциональная мебель, спокойная эстетика и внимание к деталям.</p>
+          <div class="hero-actions">
+            <a class="button button-dark" href="catalog.html">Смотреть каталог <span aria-hidden="true">↗</span></a>
+            <a class="text-link" href="#about">О компании <span aria-hidden="true">↓</span></a>
+          </div>
+          <div class="hero-note"><span class="note-line"></span> Продуманный дизайн без лишнего</div>
+        </div>
+        <div class="hero-image-wrap">
+          <img class="hero-image" src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1400&q=85" alt="Светлая гостиная с современной мебелью">
+          <div class="image-caption"><span>01 / 04</span><span>Коллекция пространства</span></div>
+        </div>
+      </div>
+    </section>
 
-            if (name.trim() === "") {
-                document.getElementById("greeting").textContent =
-                    "Пожалуйста, введите свое имя!";
-            } else {
-                document.getElementById("greeting").textContent =
-                    "Привет, " + name + "!";
-            }
-        }
+    <section class="intro-section section-space" id="about">
+      <div class="container intro-grid">
+        <p class="eyebrow">01 — О КОМПАНИИ</p>
+        <div>
+          <h2 class="section-heading">Мебель, которая<br>оставляет <span>главное.</span></h2>
+          <div class="intro-bottom">
+            <p>FORMA — мебельная компания для тех, кто ценит ясные линии, практичные решения и естественные материалы. Мы подбираем предметы, которые легко становятся частью повседневной жизни.</p>
+            <a class="text-link" href="catalog.html">Познакомиться с коллекцией <span aria-hidden="true">↗</span></a>
+          </div>
+        </div>
+      </div>
+    </section>
 
-        // Обновление даты и времени
-        function updateDateTime() {
-            const now = new Date();
-            const date = now.toLocaleDateString("ru-RU", {
-                weekday: "long",
-                year: "numeric",
-                month: "long",
-                day: "numeric"
-            });
-            const time = now.toLocaleTimeString("ru-RU", {
-                hour: "2-digit",
-                minute: "2-digit",
-                second: "2-digit"
-            });
-            document.getElementById("date").textContent = date;
-            document.getElementById("time").textContent = time;
-        }
-        updateDateTime();
-        setInterval(updateDateTime, 1000);
+    <section class="categories-section section-space">
+      <div class="container">
+        <div class="section-topline">
+          <div><p class="eyebrow">02 — ПРЕДЛОЖЕНИЯ</p><h2 class="section-heading">Выберите своё</h2></div>
+          <a class="text-link" href="catalog.html">Весь каталог <span aria-hidden="true">↗</span></a>
+        </div>
+        <div class="category-grid">
+          <a class="category-card" href="catalog.html?category=sofas">
+            <img src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?auto=format&fit=crop&w=900&q=80" alt="Диван в минималистичном интерьере">
+            <div><span>01</span><h3>Диваны</h3><span class="category-arrow">↗</span></div>
+          </a>
+          <a class="category-card" href="catalog.html?category=chairs">
+            <img src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=900&q=80" alt="Мебель для обеденной зоны">
+            <div><span>02</span><h3>Стулья и кресла</h3><span class="category-arrow">↗</span></div>
+          </a>
+          <a class="category-card" href="catalog.html?category=tables">
+            <img src="https://images.unsplash.com/photo-1499933374294-4584851497cc?auto=format&fit=crop&w=900&q=80" alt="Деревянный стол в интерьере">
+            <div><span>03</span><h3>Столы</h3><span class="category-arrow">↗</span></div>
+          </a>
+        </div>
+      </div>
+    </section>
 
-        // Календарь
-        let currentMonth = new Date().getMonth();
-        let currentYear = new Date().getFullYear();
+    <section class="statement-section">
+      <div class="container statement-inner">
+        <p class="eyebrow">НАШ ПОДХОД</p>
+        <h2>Меньше лишнего.<br><span>Больше пространства для жизни.</span></h2>
+        <a class="button button-light" href="catalog.html">Найти свою мебель <span aria-hidden="true">↗</span></a>
+      </div>
+    </section>
 
-        function renderCalendar() {
-            const calendar = document.getElementById("calendar");
-            const monthYear = document.getElementById("monthYear");
+    <section class="values-section section-space">
+      <div class="container">
+        <p class="eyebrow">03 — ПОЧЕМУ FORMA</p>
+        <div class="values-grid">
+          <article class="value-item"><span>01</span><h3>Продуманный дизайн</h3><p>Лаконичные формы, которые не перегружают интерьер.</p></article>
+          <article class="value-item"><span>02</span><h3>Практичность</h3><p>Предметы, созданные для удобства каждый день.</p></article>
+          <article class="value-item"><span>03</span><h3>Внимание к деталям</h3><p>Материалы, пропорции и отделка имеют значение.</p></article>
+        </div>
+      </div>
+    </section>
+  </main>
 
-            calendar.innerHTML = "";
-
-            const monthNames = [
-                "Январь", "Февраль", "Март", "Апрель",
-                "Май", "Июнь", "Июль", "Август",
-                "Сентябрь", "Октябрь", "Ноябрь", "Декабрь"
-            ];
-
-            monthYear.textContent =
-                `${monthNames[currentMonth]} ${currentYear}`;
-
-            const weekdays = [
-                "Пн", "Вт", "Ср", "Чт", "Пт", "Сб", "Вс"
-            ];
-
-            weekdays.forEach(day => {
-                const element = document.createElement("div");
-                element.textContent = day;
-                element.className = "calendar-weekday";
-                calendar.appendChild(element);
-            });
-
-            const firstDay = new Date(
-                currentYear,
-                currentMonth,
-                1
-            );
-
-            const daysInMonth = new Date(
-                currentYear,
-                currentMonth + 1,
-                0
-            ).getDate();
-
-            const startDay = (firstDay.getDay() + 6) % 7;
-
-            for (let i = 0; i < startDay; i++) {
-                calendar.appendChild(
-                    document.createElement("div")
-                );
-            }
-
-            const today = new Date();
-
-            for (let day = 1; day <= daysInMonth; day++) {
-                const element = document.createElement("div");
-                element.textContent = day;
-                element.className = "calendar-day";
-                if (
-                    day === today.getDate() &&
-                    currentMonth === today.getMonth() &&
-                    currentYear === today.getFullYear()
-                ) {
-                    element.classList.add("today");
-                }
-                calendar.appendChild(element);
-            }
-        }
-
-        // Переключение месяцев
-        function changeMonth(direction) {
-            currentMonth += direction;
-            if (currentMonth > 11) {
-                currentMonth = 0;
-                currentYear++;
-            }
-            if (currentMonth < 0) {
-                currentMonth = 11;
-                currentYear--;
-            }
-            renderCalendar();
-        }
-
-        renderCalendar();
-    </script>
+  <footer class="site-footer">
+    <div class="container footer-main">
+      <a class="logo logo-light" href="index.html">FORMA<span>.</span></a>
+      <p>Мебель для жизни.<br>Пространство для вашего.</p>
+      <div class="footer-nav"><a href="catalog.html">Каталог</a><a href="reviews.html">Отзывы</a><a href="contacts.html">Контакты</a></div>
+      <div class="footer-contact"><span>НАПИШИТЕ НАМ</span><a href="mailto:hello@forma.example">hello@forma.example</a></div>
+    </div>
+    <div class="container footer-bottom"><span>© <span data-year></span> FORMA</span><span>Дизайн с вниманием к главному</span></div>
+  </footer>
 </body>
 </html>

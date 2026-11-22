@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Свяжитесь с мебельной компанией FORMA.">
+  <title>Контакты — FORMA</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/script.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="index.html" aria-label="FORMA — главная">FORMA<span>.</span></a>
+      <button class="menu-toggle" type="button" aria-label="Открыть меню" aria-expanded="false"><span></span><span></span></button>
+      <nav class="main-nav" aria-label="Главная навигация">
+        <a href="index.html">Главная</a><a href="catalog.html">Каталог</a><a href="reviews.html">Отзывы</a><a href="contacts.html" aria-current="page">Контакты</a>
+      </nav>
+      <a class="header-link" href="contacts.html">Связаться <span aria-hidden="true">↗</span></a>
+    </div>
+  </header>
+
+  <main>
+    <section class="page-hero">
+      <div class="container">
+        <p class="eyebrow">МЫ НА СВЯЗИ</p>
+        <h1 class="page-title">Давайте обсудим<br><span>ваше пространство.</span></h1>
+        <p class="page-lead">Поможем с выбором мебели, ответим на вопросы о товарах и расскажем об условиях заказа.</p>
+      </div>
+    </section>
+
+    <section class="contacts-section section-space">
+      <div class="container contacts-grid">
+        <div class="contact-details">
+          <div class="contact-item"><span class="eyebrow">ТЕЛЕФОН</span><a href="tel:+70000000000">+7 (000) 000-00-00</a></div>
+          <div class="contact-item"><span class="eyebrow">ЭЛЕКТРОННАЯ ПОЧТА</span><a href="mailto:hello@forma.example">hello@forma.example</a></div>
+          <div class="contact-item"><span class="eyebrow">АДРЕС ШОУРУМА</span><p>Укажите адрес вашего магазина</p></div>
+          <div class="contact-item"><span class="eyebrow">ВРЕМЯ РАБОТЫ</span><p>Пн–Сб, 10:00–19:00</p></div>
+        </div>
+
+        <div class="contact-form-wrap">
+          <p class="eyebrow">ОСТАВИТЬ ЗАПРОС</p>
+          <h2>Напишите нам</h2>
+          <form id="contact-form" class="contact-form">
+            <label>Ваше имя<input type="text" name="name" placeholder="Как к вам обращаться?" required></label>
+            <label>Электронная почта<input type="email" name="email" placeholder="name@example.com" required></label>
+            <label>Сообщение<textarea name="message" rows="5" placeholder="Расскажите, какая мебель вас интересует" required></textarea></label>
+            <button class="button button-dark" type="submit">Подготовить письмо <span aria-hidden="true">↗</span></button>
+            <p class="form-note">После отправки откроется почтовая программа с подготовленным письмом. Для работы замените демонстрационный адрес hello@forma.example на свой.</p>
+            <p class="form-status" id="form-status" role="status"></p>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-main">
+      <a class="logo logo-light" href="index.html">FORMA<span>.</span></a>
+      <p>Мебель для жизни.<br>Пространство для вашего.</p>
+      <div class="footer-nav"><a href="catalog.html">Каталог</a><a href="reviews.html">Отзывы</a><a href="contacts.html">Контакты</a></div>
+      <div class="footer-contact"><span>НАПИШИТЕ НАМ</span><a href="mailto:hello@forma.example">hello@forma.example</a></div>
+    </div>
+    <div class="container footer-bottom"><span>© <span data-year></span> FORMA</span><span>Дизайн с вниманием к главному</span></div>
+  </footer>
+</body>
+</html>
