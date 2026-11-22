@@ -1,5 +1,4 @@
-
-name: CI/CD - Deploy Website
+name: CI/CD - Deploy FORMA Website
 
 on:
   push:
@@ -18,35 +17,42 @@ concurrency:
 
 jobs:
   validate:
-    name: CI - Check HTML
+    name: CI - Check website files
     runs-on: ubuntu-latest
 
     steps:
       - name: Get source code
         uses: actions/checkout@v6
 
-      - name: Check HTML file
+      - name: Check required files
         run: |
           test -f index.html
+          test -f catalog.html
+          test -f reviews.html
+          test -f contacts.html
+          test -f css/style.css
+          test -f js/script.js
+          echo "All required website files exist."
+
+      - name: Check HTML parsing
+        run: |
           python3 - <<'PY'
           from html.parser import HTMLParser
+          from pathlib import Path
 
           class Checker(HTMLParser):
               pass
 
-          with open("index.html", encoding="utf-8") as file:
-              html = file.read()
-
-          Checker().feed(html)
-
-          if "<!DOCTYPE HTML>" not in html.upper():
-              raise SystemExit("DOCTYPE is missing")
-
-          print("HTML file exists and can be parsed!")
+          for filename in ["index.html", "catalog.html", "reviews.html", "contacts.html"]:
+              html = Path(filename).read_text(encoding="utf-8")
+              Checker().feed(html)
+              if "<!doctype html>" not in html.lower():
+                  raise SystemExit(f"DOCTYPE is missing in {filename}")
+              print(f"{filename}: parsed successfully")
           PY
 
   deploy:
-    name: CD - Deploy Website
+    name: CD - Deploy to GitHub Pages
     needs: validate
     runs-on: ubuntu-latest
 
