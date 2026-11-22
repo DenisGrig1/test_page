@@ -215,7 +215,6 @@ function initContactForm() {
       `Имя: ${name}\nЭлектронная почта: ${email}\n\nСообщение:\n${message}`
     );
 
-    // Замените адрес на реальную почту компании.
     const recipient = "hello@forma.example";
     const mailtoLink = `mailto:${recipient}?subject=${subject}&body=${body}`;
 
