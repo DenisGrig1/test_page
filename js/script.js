@@ -66,7 +66,7 @@ const products = [
     categoryName: "Стулья и кресла",
     description: "Деревянный стул с мягким сиденьем",
     price: 15900,
-    image: "https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=900&q=80",
+    image: "https://i.pinimg.com/474x/62/36/07/6236075446bdbb3fc1965d1c386c4b1d.jpg?nii=t",
     alt: "Стул в современной обеденной зоне"
   },
   {
@@ -96,7 +96,7 @@ const products = [
     categoryName: "Хранение",
     description: "Компактная система хранения",
     price: 46900,
-    image: "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?auto=format&fit=crop&w=900&q=80",
+    image: "https://i.pinimg.com/originals/56/1d/42/561d42660daf39dec35730756e4581fd.jpg?nii=t",
     alt: "Мебель для хранения в интерьере"
   },
   {
@@ -106,7 +106,7 @@ const products = [
     categoryName: "Хранение",
     description: "Минималистичная прикроватная тумба",
     price: 18900,
-    image: "https://images.unsplash.com/photo-1499933374294-4584851497cc?auto=format&fit=crop&w=900&q=80",
+    image: "https://elizaspb.ru/jpg/414aea5ac4630315b209251ad9ba558f.jpg",
     alt: "Лаконичная деревянная мебель"
   }
 ];
