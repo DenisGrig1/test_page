@@ -34,7 +34,7 @@ const products = [
     name: "Диван LINE",
     category: "sofas",
     categoryName: "Диваны",
-    description: "Прямой диван с лаконичным силуэтом",
+    description: "Прямой минималистичный диван",
     price: 89900,
     image: "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?auto=format&fit=crop&w=900&q=80",
     alt: "Современный диван в спокойном интерьере"
@@ -44,7 +44,7 @@ const products = [
     name: "Диван SOFT",
     category: "sofas",
     categoryName: "Диваны",
-    description: "Мягкая посадка и простые формы",
+    description: "Мягкий и удобный",
     price: 112000,
     image: "https://images.unsplash.com/photo-1550254478-ead40cc54513?auto=format&fit=crop&w=900&q=80",
     alt: "Светлый мягкий диван"
@@ -54,7 +54,7 @@ const products = [
     name: "Кресло FORM",
     category: "chairs",
     categoryName: "Стулья и кресла",
-    description: "Акцентное кресло для отдыха",
+    description: "Дизайнерское кресло для отдыха",
     price: 42900,
     image: "https://images.unsplash.com/photo-1567538096630-e0c55bd6374c?auto=format&fit=crop&w=900&q=80",
     alt: "Дизайнерское кресло"
@@ -74,7 +74,7 @@ const products = [
     name: "Стол TABLE",
     category: "tables",
     categoryName: "Столы",
-    description: "Обеденный стол из натурального дерева",
+    description: "Небольшой прикроватный столик",
     price: 54900,
     image: "https://images.unsplash.com/photo-1499933374294-4584851497cc?auto=format&fit=crop&w=900&q=80",
     alt: "Деревянный стол"
@@ -94,7 +94,7 @@ const products = [
     name: "Комод BLOCK",
     category: "storage",
     categoryName: "Хранение",
-    description: "Компактная система хранения",
+    description: "Компактный комод для одежды",
     price: 46900,
     image: "https://i.pinimg.com/originals/56/1d/42/561d42660daf39dec35730756e4581fd.jpg?nii=t",
     alt: "Мебель для хранения в интерьере"
