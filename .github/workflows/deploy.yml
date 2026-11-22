@@ -1,0 +1,77 @@
+name: CI/CD - Deploy FORMA Website
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  validate:
+    name: CI - Check website files
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Get source code
+        uses: actions/checkout@v6
+
+      - name: Check required files
+        run: |
+          test -f index.html
+          test -f catalog.html
+          test -f reviews.html
+          test -f contacts.html
+          test -f css/style.css
+          test -f js/script.js
+          echo "All required website files exist."
+
+      - name: Check HTML parsing
+        run: |
+          python3 - <<'PY'
+          from html.parser import HTMLParser
+          from pathlib import Path
+
+          class Checker(HTMLParser):
+              pass
+
+          for filename in ["index.html", "catalog.html", "reviews.html", "contacts.html"]:
+              html = Path(filename).read_text(encoding="utf-8")
+              Checker().feed(html)
+              if "<!doctype html>" not in html.lower():
+                  raise SystemExit(f"DOCTYPE is missing in {filename}")
+              print(f"{filename}: parsed successfully")
+          PY
+
+  deploy:
+    name: CD - Deploy to GitHub Pages
+    needs: validate
+    runs-on: ubuntu-latest
+
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    steps:
+      - name: Get source code
+        uses: actions/checkout@v6
+
+      - name: Configure GitHub Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload website
+        uses: actions/upload-pages-artifact@v4
+        with:
+          path: .
+
+      - name: Deploy website
+        id: deployment
+        uses: actions/deploy-pages@v4
